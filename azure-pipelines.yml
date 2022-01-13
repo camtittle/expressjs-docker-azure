@@ -11,6 +11,7 @@ steps:
 - task: Docker@2
   displayName: Build an image
   inputs:
-    repository: $(imageName)
-    command: build
-    Dockerfile: ./Dockerfile
+    containerRegistry: 'CameronTContainerRegistry'
+    repository: '$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: './Dockerfile'
